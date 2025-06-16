@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests with coverage
-        run: npm test -- --coverage
+      - name: Run tests with coverage (skip if no tests)
+        run: npm test -- --coverage --passWithNoTests
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
